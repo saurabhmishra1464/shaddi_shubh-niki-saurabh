@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>शुभ विवाह निमंत्रण | निकिता संग सौरभ</title>
+  
+  <!-- Google Fonts for Elegant Hindi & Royal Indian Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Yatra+One&family=Noto+Serif+Devanagari:wght@400;600;700;800&family=Tiro+Devanagari+Hindi:ital@0;1&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-maroon: #851329;
+      --deep-maroon: #540817;
+      --gold-primary: #d4af37;
+      --gold-dark: #a27b08;
+      --gold-light: #fae29c;
+      --cream-bg: #fdfaf4;
+      --text-dark: #38241e;
+      --text-muted: #6f5951;
+      --border-gold: rgba(212, 175, 55, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: #240207;
+      background-image: radial-gradient(circle at 50% 20%, #4a0a17 0%, #150104 100%);
+      font-family: 'Noto Serif Devanagari', 'Poppins', serif;
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      overflow-x: hidden;
+      padding: 10px 0;
+    }
+
+    /* Mobile Container Preview Simulation */
+    .app-viewport {
+      width: 100%;
+      max-width: 440px;
+      min-height: 100vh;
+      background: var(--cream-bg);
+      position: relative;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.65);
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---------------- 1. शाही लिफाफा (ENVELOPE / WAX SEAL COVER) ---------------- */
+    #envelope-screen {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 440px;
+      height: 100vh;
+      z-index: 100;
+      background: linear-gradient(135deg, #df9b00 0%, #fec942 50%, #ca8000 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+      overflow: hidden;
+      box-shadow: inset 0 0 80px rgba(150, 80, 0, 0.4);
+    }
+
+    .envelope-texture {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1.5px, transparent 1.5px);
+      background-size: 16px 16px;
+      pointer-events: none;
+    }
+
+    .envelope-border {
+      position: absolute;
+      inset: 15px;
+      border: 2px dashed rgba(133, 19, 41, 0.45);
+      border-radius: 14px;
+      pointer-events: none;
+    }
+
+    .wax-seal {
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle at 35% 35%, #a61c33 0%, #680d1d 75%, #460611 100%);
+      border-radius: 50%;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35), inset 0 3px 6px rgba(255, 255, 255, 0.25), inset 0 -4px 8px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      animation: pulseSeal 2.2s infinite ease-in-out;
+      border: 2px solid rgba(255, 215, 0, 0.4);
+    }
+
+    @keyframes pulseSeal {
+      0%, 100% { transform: scale(1); box-shadow: 0 10px 25px rgba(0,0,0,0.35); }
+      50% { transform: scale(1.05); box-shadow: 0 14px 32px rgba(133, 19, 41, 0.5); }
+    }
+
+    .wax-seal-inner {
+      width: 100px;
+      height: 100px;
+      border: 1.5px dashed rgba(255, 225, 140, 0.6);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #ffe6a3;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    }
+
+    .seal-initials {
+      font-family: 'Rozha One', serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+    }
+
+    .seal-subtext {
+      font-size: 0.62rem;
+      letter-spacing: 1px;
+      margin-top: -2px;
+    }
+
+    .tap-hint {
+      margin-top: 30px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #5c0717;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: bounceHint 1.8s infinite;
+      letter-spacing: 1px;
+    }
+
+    @keyframes bounceHint {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    #envelope-screen.opened {
+      transform: translateX(-50%) translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* ---------------- 2. मुख्य निमंत्रण पत्र (MAIN CARD) ---------------- */
+    .invite-container {
+      width: 100%;
+      padding: 24px 18px 60px 18px;
+      position: relative;
+      background: #fcf9f2;
+    }
+
+    .top-hero {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .shri-ganesh {
+      font-size: 1rem;
+      color: var(--primary-maroon);
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .shlok-box {
+      font-size: 0.8rem;
+      color: #7b262d;
+      line-height: 1.6;
+      background: #faeed7;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px dashed var(--gold-primary);
+      margin: 10px auto;
+      max-width: 92%;
+    }
+
+    .family-lead {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-top: 14px;
+    }
+
+    .invitation-head {
+      font-size: 0.85rem;
+      color: var(--primary-maroon);
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    /* Couple Photo Frame */
+    .couple-photo-frame {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 3px solid #dfb15b;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      margin: 16px 0;
+      position: relative;
+      background: #eee;
+    }
+
+    .couple-photo-frame img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* दुल्हा-दुल्हन के नाम */
+    .names-section {
+      text-align: center;
+      margin: 20px 0;
+      background: #ffffff;
+      padding: 20px 14px;
+      border-radius: 16px;
+      border: 1px solid #ebd7ab;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+
+    .bride-name, .groom-name {
+      font-family: 'Rozha One', 'Noto Serif Devanagari', serif;
+      font-size: 2.5rem;
+      color: var(--primary-maroon);
+      line-height: 1.2;
+    }
+
+    .parents-info {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    .names-connector {
+      font-family: 'Yatra One', cursive;
+      font-size: 1.8rem;
+      color: var(--gold-dark);
+      margin: 8px 0;
+      display: block;
+    }
+
+    /* शुभ दिन और स्थान बॉक्स */
+    .primary-event-details {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: #fff;
+      border: 1px solid #ebd7ab;
+      border-radius: 12px;
+      padding: 16px 10px;
+      margin: 18px 0;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+
+    .detail-col {
+      flex: 1;
+    }
+
+    .detail-col:first-child {
+      border-right: 1px solid #ebd7ab;
+    }
+
+    .detail-col .label {
+      font-size: 0.74rem;
+      letter-spacing: 1px;
+      color: var(--gold-dark);
+      font-weight: 700;
+    }
+
+    .detail-col .val-large {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-maroon);
+      margin-top: 4px;
+    }
+
+    .detail-col .val-sub {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .hashtag {
+      text-align: center;
+      font-size: 0.88rem;
+      letter-spacing: 1.5px;
+      color: var(--gold-dark);
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    /* Section Header */
+    .section-title-wrap {
+      text-align: center;
+      margin: 35px 0 20px 0;
+      position: relative;
+    }
+
+    .section-title-sub {
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      color: var(--gold-dark);
+      font-weight: 700;
+    }
+
+    .section-title-main {
+      font-family: 'Rozha One', 'Noto Serif Devanagari', serif;
+      font-size: 2.1rem;
+      color: var(--primary-maroon);
+      line-height: 1.3;
+      margin-top: 2px;
+    }
+
+    /* ---------------- 3. वैवाहिक कार्यक्रम (TIMELINE) ---------------- */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 12px;
+    }
+
+    .timeline-card {
+      background: #ffffff;
+      border: 1px solid #ebd7ab;
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      gap: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--gold-primary);
+    }
+
+    .event-info {
+      flex: 1;
+    }
+
+    .event-date {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--gold-dark);
+    }
+
+    .event-name {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 1.28rem;
+      color: var(--primary-maroon);
+      font-weight: 800;
+      margin: 2px 0 4px 0;
+    }
+
+    .event-desc {
+      font-size: 0.8rem;
+      color: var(--text-dark);
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .event-time-venue {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .event-dress {
+      font-size: 0.76rem;
+      color: var(--primary-maroon);
+      font-weight: 600;
+    }
+
+    .cal-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid #d4af37;
+      background: #fffbf0;
+      color: #795505;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 8px;
+    }
+
+    /* Thumbnail Button for Scratch / Tap Interaction */
+    .event-interactive-thumb {
+      width: 86px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #fdf6ea;
+      border: 1px dashed #d4af37;
+      border-radius: 10px;
+      cursor: pointer;
+      padding: 8px 4px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .event-interactive-thumb:hover {
+      transform: scale(1.04);
+    }
+
+    .thumb-tag {
+      font-size: 0.6rem;
+      font-weight: 800;
+      color: #fff;
+      background: var(--primary-maroon);
+      padding: 2px 6px;
+      border-radius: 10px;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .thumb-icon {
+      font-size: 26px;
+    }
+
+    .thumb-action-text {
+      font-size: 0.64rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-top: 4px;
+      line-height: 1.2;
+    }
+
+    /* ---------------- 4. इंटरैक्टिव पॉपअप (SCRATCH & TAP MODAL) ---------------- */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      backdrop-filter: blur(5px);
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-container {
+      width: 100%;
+      max-width: 380px;
+      background: #fffcf6;
+      border-radius: 20px;
+      border: 2px solid var(--gold-primary);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 34px;
+      height: 34px;
+      background: rgba(0,0,0,0.65);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 210;
+    }
+
+    .modal-reveal-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--primary-maroon);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      z-index: 210;
+    }
+
+    .interactive-canvas-box {
+      width: 100%;
+      height: 480px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+    }
+
+    /* Underneath Card Content */
+    .under-card {
+      position: absolute;
+      inset: 0;
+      padding: 25px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: radial-gradient(circle at 50% 30%, #fffdf7 0%, #faecd2 100%);
+    }
+
+    .under-card h3 {
+      font-family: 'Rozha One', 'Noto Serif Devanagari', serif;
+      font-size: 1.5rem;
+      color: var(--primary-maroon);
+      margin-bottom: 6px;
+    }
+
+    .under-card .under-sub {
+      font-family: 'Yatra One', cursive;
+      font-size: 1.35rem;
+      color: var(--gold-dark);
+      margin-bottom: 12px;
+    }
+
+    .under-card .under-date {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .under-card .under-venue {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Scratch Canvas Layer */
+    #scratch-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 205;
+      cursor: grab;
+      touch-action: none;
+    }
+
+    /* Dhol Interactive Layer for Sangeet */
+    .dhol-interactive-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 205;
+      background: #8e1025;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #ffe6a3;
+      text-align: center;
+      padding: 20px;
+      transition: opacity 0.5s ease;
+    }
+
+    .dhol-icon-big {
+      font-size: 90px;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.3));
+      transition: transform 0.1s;
+    }
+
+    .dhol-icon-big.beat {
+      transform: scale(1.2) rotate(6deg);
+    }
+
+    .modal-bottom-tip {
+      background: #fbf5e7;
+      border-top: 1px solid #ebd7ab;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary-maroon);
+      letter-spacing: 0.5px;
+    }
+
+    /* ---------------- 5. टीम दुल्हन vs टीम दुल्हा (RIVALRY) ---------------- */
+    .rivalry-card {
+      background: #ffffff;
+      border: 1px solid #ebd7ab;
+      border-radius: 16px;
+      padding: 22px 16px;
+      margin: 30px 0 20px 0;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+
+    .rivalry-tag {
+      font-size: 0.74rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+      color: var(--gold-dark);
+    }
+
+    .rivalry-card h3 {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 1.35rem;
+      color: var(--primary-maroon);
+      margin: 4px 0 8px 0;
+      font-weight: 700;
+    }
+
+    .rivalry-card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .teams-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .team-btn {
+      flex: 1;
+      padding: 15px 10px;
+      border-radius: 12px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.25s ease;
+      background: #fdfaf5;
+    }
+
+    .team-bride {
+      border-color: #f7a8b8;
+    }
+
+    .team-bride.selected {
+      background: #ffe9ee;
+      border-color: #d63384;
+      box-shadow: 0 4px 12px rgba(214, 51, 132, 0.2);
+    }
+
+    .team-groom {
+      border-color: #fbd38d;
+    }
+
+    .team-groom.selected {
+      background: #fff3dc;
+      border-color: #d69e2e;
+      box-shadow: 0 4px 12px rgba(214, 158, 46, 0.2);
+    }
+
+    .team-btn .team-emoji {
+      font-size: 28px;
+    }
+
+    .team-btn .team-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.3;
+    }
+
+    .team-status-banner {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary-maroon);
+      min-height: 22px;
+    }
+
+    /* ---------------- 6. शुभ लग्न काउंटडाउन (COUNTDOWN TIMER) ---------------- */
+    .countdown-card {
+      background: linear-gradient(135deg, #7c1228 0%, #4a0714 100%);
+      border-radius: 16px;
+      padding: 22px 14px;
+      color: #fff;
+      text-align: center;
+      margin: 25px 0;
+      box-shadow: 0 8px 24px rgba(124, 18, 40, 0.3);
+    }
+
+    .countdown-title {
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      color: #f8cf74;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .countdown-grid {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .timer-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .timer-val {
+      font-family: 'Rozha One', 'Poppins', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.12);
+      width: 58px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 215, 0, 0.25);
+    }
+
+    .timer-lbl {
+      font-size: 0.72rem;
+      margin-top: 6px;
+      color: #ebd7ab;
+      font-weight: 600;
+    }
+
+    /* ---------------- 7. उपस्थिति सूचना (RSVP FORM) ---------------- */
+    .rsvp-card {
+      background: #ffffff;
+      border: 1px solid #ebd7ab;
+      border-radius: 16px;
+      padding: 24px 18px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+      margin-top: 25px;
+    }
+
+    .rsvp-card h3 {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 1.35rem;
+      color: var(--primary-maroon);
+      text-align: center;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .rsvp-card p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--gold-dark);
+      margin-bottom: 6px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #e0ceba;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      background: #fffefb;
+      color: var(--text-dark);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-input:focus {
+      border-color: var(--gold-primary);
+    }
+
+    .attendance-toggle {
+      display: flex;
+      gap: 10px;
+    }
+
+    .attendance-opt {
+      flex: 1;
+      padding: 10px 8px;
+      border: 1.5px solid #ebd7ab;
+      background: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+
+    .attendance-opt.active {
+      background: #7c1228;
+      color: #fff;
+      border-color: #7c1228;
+    }
+
+    /* Event pills checkbox */
+    .events-checkbox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .event-pill {
+      border: 1px solid #ebd7ab;
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .event-pill.checked {
+      background: #fdf3d8;
+      border-color: #c99332;
+      color: #630c1c;
+    }
+
+    .event-pill input {
+      display: none;
+    }
+
+    .whatsapp-btn {
+      width: 100%;
+      background: #25d366;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: none;
+      border-radius: 30px;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+      margin-top: 15px;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .whatsapp-btn:hover {
+      background: #20ba59;
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    .footer-blessing {
+      text-align: center;
+      margin-top: 40px;
+      color: var(--text-muted);
+    }
+
+    .footer-blessing .bless-title {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .footer-blessing .names {
+      font-family: 'Rozha One', 'Noto Serif Devanagari', serif;
+      font-size: 1.8rem;
+      color: var(--primary-maroon);
+      margin: 6px 0;
+    }
+
+    .made-with {
+      font-size: 0.76rem;
+      letter-spacing: 1px;
+      color: var(--gold-dark);
+      margin-top: 10px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-viewport">
+    
+    <!-- ================= 1. शाही सील / लिफाफा (ENVELOPE SCREEN) ================= -->
+    <div id="envelope-screen" onclick="openEnvelope()">
+      <div class="envelope-texture"></div>
+      <div class="envelope-border"></div>
+
+      <div class="wax-seal">
+        <div class="wax-seal-inner">
+          <div class="seal-initials">न &bull; सौ</div>
+          <div class="seal-subtext">शुभ विवाह</div>
+        </div>
+      </div>
+
+      <div class="tap-hint">
+        <span>💌</span> निमंत्रण पत्र खोलने के लिए छुएं <span>✨</span>
+      </div>
+    </div>
+
+    <!-- ================= 2. मुख्य निमंत्रण (MAIN INVITATION) ================= -->
+    <div class="invite-container">
+      
+      <!-- गणेश वंदना एवं श्लोक -->
+      <div class="top-hero">
+        <p class="shri-ganesh">॥ श्री गणेशाय नमः ॥</p>
+        <div class="shlok-box">
+          वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>
+          निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥
+        </div>
+        <p class="family-lead">परमपिता परमेश्वर एवं पूज्य पूर्वजों के असीम आशीर्वाद से</p>
+        <p class="invitation-head">हमारे परिवार के इस पावन विवाह उत्सव में आप सपरिवार सादर आमंत्रित हैं</p>
+
+        <!-- Couple Photo Frame -->
+        <div class="couple-photo-frame">
+          <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80" alt="Nikita & Saurabh" />
+        </div>
+      </div>
+
+      <!-- वर एवं वधू विवरण -->
+      <div class="names-section">
+        <h1 class="bride-name">निकिता</h1>
+        <p class="parents-info">सुपुत्री: श्रीमती सरिता मिश्रा एवं श्री मनोज मिश्रा</p>
+
+        <span class="names-connector">संग</span>
+
+        <h1 class="groom-name">सौरभ मिश्रा</h1>
+        <p class="parents-info">सुपुत्र: श्रीमती अन्नू मिश्रा एवं श्री मणी शंकर मिश्रा</p>
+      </div>
+
+      <!-- शुभ लग्न एवं स्थान -->
+      <div class="primary-event-details">
+        <div class="detail-col">
+          <div class="label">शुभ तिथि</div>
+          <div class="val-large">9 दिसंबर 2026</div>
+          <div class="val-sub">बुधवार, सायं 06:00 बजे से</div>
+        </div>
+        <div class="detail-col">
+          <div class="label">विवाह स्थल</div>
+          <div class="val-large">केतुका</div>
+          <div class="val-sub">दरभंगा, बिहार</div>
+        </div>
+      </div>
+
+      <div class="hashtag">#NikitaWedsSaurabh &bull; #सौभाग्य</div>
+
+      <!-- कार्यक्रम हेडिंग -->
+      <div class="section-title-wrap">
+        <div class="section-title-sub">मंगलमय मांगलिक उत्सव</div>
+        <div class="section-title-main">वैवाहिक कार्यक्रम</div>
+      </div>
+
+      <!-- Timeline of Events -->
+      <div class="timeline">
+        
+        <!-- कार्यक्रम 1: मटकोर एवं हल्दी (Interactive Rub/Scratch Card) -->
+        <div class="timeline-card">
+          <div class="event-info">
+            <span class="event-date">रविवार, 6 दिसंबर 2026</span>
+            <h3 class="event-name">मटकोर एवं हल्दी</h3>
+            <p class="event-desc">उबटन, हल्दी और अपनों का दुलार</p>
+            <p class="event-time-venue">सायं 04:00 बजे से &bull; पैतृक निवास, केतुका, दरभंगा<br><em>"हल्दी की रस्म, बड़ों का आशीष और खुशियों की नई शुरुआत।"</em></p>
+            <a href="https://calendar.google.com" target="_blank" class="cal-btn">📅 कैलेंडर में जोड़ें</a>
+          </div>
+
+          <!-- Interactive Trigger Button -->
+          <div class="event-interactive-thumb" onclick="openInteractiveModal('haldi')">
+            <span class="thumb-tag">कार्ड छुएं</span>
+            <span class="thumb-icon">🌿</span>
+            <span class="thumb-action-text">हल्दी साफ करें</span>
+          </div>
+        </div>
+
+        <!-- कार्यक्रम 2: मेहंदी उत्सव (Trace Heart Interaction) -->
+        <div class="timeline-card">
+          <div class="event-info">
+            <span class="event-date">सोमवार, 7 दिसंबर 2026</span>
+            <h3 class="event-name">मेहंदी उत्सव</h3>
+            <p class="event-desc">रचेगी पिया के नाम की महकती मेहंदी</p>
+            <p class="event-time-venue">अपराह्न 03:00 बजे से &bull; केतुका, दरभंगा</p>
+            <p class="event-dress">पहनावा: हरा एवं पारम्परिक रंग</p>
+            <a href="https://calendar.google.com" target="_blank" class="cal-btn">📅 कैलेंडर में जोड़ें</a>
+          </div>
+
+          <div class="event-interactive-thumb" onclick="openInteractiveModal('mehndi')">
+            <span class="thumb-tag">कार्ड छुएं</span>
+            <span class="thumb-icon">🖐️</span>
+            <span class="thumb-action-text">मेहंदी से दिल बनाएं</span>
+          </div>
+        </div>
+
+        <!-- कार्यक्रम 3: संगीत संध्या (Tap the Dhol) -->
+        <div class="timeline-card">
+          <div class="event-info">
+            <span class="event-date">मंगलवार, 8 दिसंबर 2026</span>
+            <h3 class="event-name">संगीत संध्या</h3>
+            <p class="event-desc">ढोलक की थाप, मधुर लोकगीत और झूमता परिवार</p>
+            <p class="event-time-venue">सायं 06:30 बजे से &bull; केतुका, दरभंगा<br><em>"गीतों की मधुर तान और नृत्य की मस्ती।"</em></p>
+            <a href="https://calendar.google.com" target="_blank" class="cal-btn">📅 कैलेंडर में जोड़ें</a>
+          </div>
+
+          <div class="event-interactive-thumb" onclick="openInteractiveModal('sangeet')">
+            <span class="thumb-tag">मस्ती</span>
+            <span class="thumb-icon">🥁</span>
+            <span class="thumb-action-text">ढोल बजाएं</span>
+          </div>
+        </div>
+
+        <!-- कार्यक्रम 4: शुभ विवाह / बारात एवं पाणिग्रहण संस्कार -->
+        <div class="timeline-card">
+          <div class="event-info">
+            <span class="event-date">बुधवार, 9 दिसंबर 2026</span>
+            <h3 class="event-name">शुभ विवाह (पाणिग्रहण संस्कार)</h3>
+            <p class="event-desc">शुभ लग्न, जयमाला एवं सात फेरे</p>
+            <p class="event-time-venue">बारात स्वागत: सायं 06:00 बजे &bull; शुभ पाणिग्रहण: रात्रि लग्न वेला में<br>स्थान: केतुका, दरभंगा, बिहार</p>
+            <p class="event-dress">पहनावा: पारम्परिक भारतीय परिधान</p>
+            <a href="https://calendar.google.com" target="_blank" class="cal-btn">📅 कैलेंडर में जोड़ें</a>
+          </div>
+
+          <div class="event-interactive-thumb" onclick="openInteractiveModal('wedding')">
+            <span class="thumb-tag">लग्न वेला</span>
+            <span class="thumb-icon">🪔</span>
+            <span class="thumb-action-text">शुभ लग्न देखें</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ================= 3. टीम दुल्हन vs टीम दुल्हा (PICK YOUR SIDE) ================= -->
+      <div class="rivalry-card">
+        <div class="rivalry-tag">थोड़ी मीठी नोक-झोंक</div>
+        <h3>आप किस पक्ष से हैं?</h3>
+        <p>किसकी तरफ से स्वागत और उत्साह में शामिल होंगे? अपना पक्ष चुनें और आशीर्वाद भेजें!</p>
+
+        <div class="teams-buttons">
+          <div class="team-btn team-bride" id="btn-bride" onclick="selectTeam('टीम दुल्हन (निकिता)', this)">
+            <span class="team-emoji">🌸</span>
+            <span class="team-name">टीम दुल्हन<br>निकिता</span>
+          </div>
+
+          <div class="team-btn team-groom" id="btn-groom" onclick="selectTeam('टीम दुल्हा (सौरभ)', this)">
+            <span class="team-emoji">👑</span>
+            <span class="team-name">टीम दुल्हा<br>सौरभ</span>
+          </div>
+        </div>
+
+        <div class="team-status-banner" id="team-status">कृपया अपना पक्ष चुनें!</div>
+      </div>
+
+      <!-- ================= 4. शुभ लग्न काउंटडाउन (COUNTDOWN TIMER) ================= -->
+      <div class="countdown-card">
+        <div class="countdown-title">शुभ विवाह लग्न का इंतज़ार</div>
+        <div class="countdown-grid">
+          <div class="timer-unit">
+            <div class="timer-val" id="days">00</div>
+            <div class="timer-lbl">दिन</div>
+          </div>
+          <div class="timer-unit">
+            <div class="timer-val" id="hours">00</div>
+            <div class="timer-lbl">घंटे</div>
+          </div>
+          <div class="timer-unit">
+            <div class="timer-val" id="minutes">00</div>
+            <div class="timer-lbl">मिनट</div>
+          </div>
+          <div class="timer-unit">
+            <div class="timer-val" id="seconds">00</div>
+            <div class="timer-lbl">सेकंड</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 5. उपस्थिति एवं आशीर्वाद (RSVP VIA WHATSAPP) ================= -->
+      <div class="rsvp-card">
+        <h3>क्या आप हमारे साथ खुशियों में शामिल होंगे?</h3>
+        <p>कृपया 25 नवंबर 2026 तक अपनी उपस्थिति की पुष्टि करें।<br>आपका संदेश सीधे हमारे व्हाट्सएप पर पहुंचेगा!</p>
+
+        <div class="form-group">
+          <label class="form-label">आपका शुभ नाम</label>
+          <input type="text" id="guest-name" class="form-input" placeholder="मिश्रा" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">क्या आप पधार रहे हैं?</label>
+          <div class="attendance-toggle">
+            <div class="attendance-opt active" id="opt-yes" onclick="setAttendance('हाँ, अवश्य पधारेंगे (सपरिवार)', this)">हाँ, अवश्य पधारेंगे 🎉</div>
+            <div class="attendance-opt" id="opt-no" onclick="setAttendance('असमर्थ हैं, किन्तु शुभकामनाएं साथ हैं', this)">शुभकामनाएं 💌</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">किन कार्यक्रमों में शामिल होंगे? (चुनें)</label>
+          <div class="events-checkbox-grid">
+            <label class="event-pill checked">
+              <input type="checkbox" value="मटकोर एवं हल्दी" checked onchange="togglePill(this)" /> 🌿 हल्दी
+            </label>
+            <label class="event-pill checked">
+              <input type="checkbox" value="मेहंदी उत्सव" checked onchange="togglePill(this)" /> 🖐️ मेहंदी
+            </label>
+            <label class="event-pill checked">
+              <input type="checkbox" value="संगीत संध्या" checked onchange="togglePill(this)" /> 🥁 संगीत
+            </label>
+            <label class="event-pill checked">
+              <input type="checkbox" value="शुभ विवाह (जयमाला/फेरे)" checked onchange="togglePill(this)" /> 🪔 शुभ विवाह
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">आने वाले अतिथियों की कुल संख्या</label>
+          <input type="number" id="guest-count" class="form-input" value="1" min="1" max="15" />
+        </div>
+
+        <button class="whatsapp-btn" onclick="sendRSVPWhatsApp()">
+          <span>💬</span> व्हाट्सएप पर उपस्थिति एवं शुभकामनाएं भेजें
+        </button>
+      </div>
+
+      <!-- गूगल मैप्स लोकेशन लिंक -->
+      <div style="text-align: center; margin-top: 22px;">
+        <a href="https://www.google.com/maps/search/?api=1&query=Ketuka+Darbhanga+Bihar" target="_blank" style="display:inline-flex; align-items:center; gap:6px; color:#851329; font-weight:700; font-size:0.88rem; text-decoration:none;">
+          📍 गूगल मैप्स पर विवाह स्थल का रास्ता देखें (केतुका, दरभंगा)
+        </a>
+      </div>
+
+      <!-- विनीत एवं दर्शनाभिलाषी -->
+      <div class="footer-blessing">
+        <p class="bless-title">बड़ों का मंगलमय आशीर्वाद एवं आप सभी स्नेहजनों का सानिध्य ही हमारा संबल है।</p>
+        <div class="names">निकिता संग सौरभ</div>
+        <p class="made-with">&bull; समस्त मिश्रा परिवार, केतुका (दरभंगा) &bull;</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= इंटरैक्टिव पॉपअप (SCRATCH & TAP MODAL) ================= -->
+  <div class="modal-overlay" id="interactive-modal">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeInteractiveModal()">&times;</button>
+      <div class="modal-reveal-badge" id="modal-badge">रंग साफ करें</div>
+
+      <div class="interactive-canvas-box">
+        
+        <!-- बैकग्राउंड कार्ड -->
+        <div class="under-card" id="modal-undercard">
+          <p style="font-size:0.75rem; letter-spacing:1px; color:#a27b08; font-weight:700;">॥ आप सादर आमंत्रित हैं ॥</p>
+          <h3 id="modal-card-title">मटकोर एवं हल्दी</h3>
+          <p class="under-sub" id="modal-card-sub">उबटन और अपनों का दुलार</p>
+          <div style="font-size: 55px; margin: 10px 0;" id="modal-card-emoji">🌿💛</div>
+          <div class="under-date" id="modal-card-date">रविवार, 6 दिसंबर 2026 &bull; सायं 04:00 बजे से</div>
+          <div class="under-venue">पैतृक निवास, केतुका, दरभंगा (बिहार)</div>
+        </div>
+
+        <!-- स्क्रैच कैनवास लेयर -->
+        <canvas id="scratch-canvas"></canvas>
+
+        <!-- संगीत ढोल लेयर -->
+        <div class="dhol-interactive-layer" id="dhol-layer" style="display: none;" onclick="beatDhol()">
+          <div class="dhol-icon-big" id="dhol-icon">🥁</div>
+          <h4 style="font-family:'Noto Serif Devanagari', serif; font-size:1.4rem; margin-top:12px;">ढोल बजाएं!</h4>
+          <p style="font-size:0.82rem; color:#ffdca3; margin-top:4px;">उंगलियों से ढोल छूकर थाप दें!</p>
+          <div style="margin-top:14px; background:rgba(0,0,0,0.35); padding:6px 16px; border-radius:20px; font-size:0.85rem;" id="dhol-counter">
+            थाप: 0
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal-bottom-tip" id="modal-instruction">
+        उंगली से हल्दी साफ करके निमंत्रण देखें
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ---------------- 1. शाही लिफाफा खोलना ---------------- */
+    function openEnvelope() {
+      const envelope = document.getElementById('envelope-screen');
+      envelope.classList.add('opened');
+    }
+
+    /* ---------------- 2. शुभ लग्न काउंटडाउन टाइमर (9 DEC 2026, 6:00 PM) ---------------- */
+    const weddingDate = new Date("December 9, 2026 18:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance < 0) {
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days < 10 ? '0' + days : days;
+      document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
+      document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
+      document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    /* ---------------- 3. टीम दुल्हन vs टीम दुल्हा चयन ---------------- */
+    let selectedTeam = "टीम दुल्हन (निकिता)";
+    function selectTeam(team, element) {
+      selectedTeam = team;
+      document.getElementById('btn-bride').classList.remove('selected');
+      document.getElementById('btn-groom').classList.remove('selected');
+      element.classList.add('selected');
+
+      document.getElementById('team-status').innerHTML = `आप <strong>${team}</strong> के साथ खुशियाँ मना रहे हैं! 🎉`;
+    }
+
+    /* ---------------- 4. उपस्थिति एवं चेकबॉक्स विकल्प ---------------- */
+    let attendanceChoice = "हाँ, अवश्य पधारेंगे (सपरिवार)";
+    function setAttendance(choice, element) {
+      attendanceChoice = choice;
+      document.getElementById('opt-yes').classList.remove('active');
+      document.getElementById('opt-no').classList.remove('active');
+      element.classList.add('active');
+    }
+
+    function togglePill(checkbox) {
+      const parent = checkbox.closest('.event-pill');
+      if (checkbox.checked) {
+        parent.classList.add('checked');
+      } else {
+        parent.classList.remove('checked');
+      }
+    }
+
+    /* ---------------- 5. व्हाट्सएप पर RSVP भेजना (हिंदी संदेश) ---------------- */
+    function sendRSVPWhatsApp() {
+      const guestName = document.getElementById('guest-name').value.trim() || "अतिथि";
+      const guestCount = document.getElementById('guest-count').value || "1";
+      
+      const checkboxes = document.querySelectorAll('.events-checkbox-grid input[type="checkbox"]:checked');
+      const eventsList = Array.from(checkboxes).map(cb => cb.value).join(', ') || 'समस्त कार्यक्रम';
+
+      // अपना व्हाट्सएप नंबर यहाँ डालें (91 के साथ)
+      const phoneNumber = "918825149794"; 
+
+      const message = `✨ *शुभ विवाह निमंत्रण उत्तर (RSVP)* ✨%0A` +
+        `👰🤵 *निकिता संग सौरभ* %0A%0A` +
+        `👤 *अतिथि का नाम:* ${encodeURIComponent(guestName)}%0A` +
+        `💌 *उपस्थिति:* ${encodeURIComponent(attendanceChoice)}%0A` +
+        `👥 *सदस्यों की संख्या:* ${guestCount}%0A` +
+        `🎉 *शामिल होने वाले कार्यक्रम:* ${encodeURIComponent(eventsList)}%0A` +
+        `💖 *पक्ष:* ${encodeURIComponent(selectedTeam)}%0A%0A` +
+        `_केतुका, दरभंगा (बिहार)_`;
+
+      window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+    }
+
+    /* ---------------- 6. इंटरैक्टिव स्क्रैच व ढोल पॉपअप ---------------- */
+    const modal = document.getElementById('interactive-modal');
+    const canvas = document.getElementById('scratch-canvas');
+    const ctx = canvas.getContext('2d');
+    const dholLayer = document.getElementById('dhol-layer');
+    let isDrawing = false;
+    let dholBeats = 0;
+
+    function openInteractiveModal(eventType) {
+      modal.classList.add('active');
+      const badge = document.getElementById('modal-badge');
+      const title = document.getElementById('modal-card-title');
+      const sub = document.getElementById('modal-card-sub');
+      const emoji = document.getElementById('modal-card-emoji');
+      const date = document.getElementById('modal-card-date');
+      const instruction = document.getElementById('modal-instruction');
+
+      dholLayer.style.display = 'none';
+      canvas.style.display = 'block';
+
+      const box = document.querySelector('.interactive-canvas-box');
+      canvas.width = box.clientWidth;
+      canvas.height = box.clientHeight;
+
+      if (eventType === 'haldi') {
+        title.innerText = "मटकोर एवं हल्दी";
+        sub.innerText = "उबटन और अपनों का दुलार";
+        emoji.innerText = "🌿💛";
+        date.innerText = "रविवार, 6 दिसंबर 2026 • सायं 04:00 बजे से";
+        instruction.innerText = "उंगली से हल्दी साफ करके निमंत्रण देखें";
+        badge.innerText = "हल्दी साफ करें";
+
+        ctx.fillStyle = '#f5b014';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        ctx.fillStyle = '#b36b00';
+        ctx.font = 'bold 18px "Noto Serif Devanagari", serif';
+        ctx.textAlign = 'center';
+        ctx.fillText("✨ हल्दी साफ करें ✨", canvas.width / 2, canvas.height / 2);
+      }
+      else if (eventType === 'mehndi') {
+        title.innerText = "मेहंदी उत्सव";
+        sub.innerText = "रचेगी पिया के नाम की मेहंदी";
+        emoji.innerText = "🖐️🌸";
+        date.innerText = "सोमवार, 7 दिसंबर 2026 • अपराह्न 03:00 बजे से";
+        instruction.innerText = "मेहंदी से दिल बनाकर कार्ड खोलें";
+        badge.innerText = "मेहंदी बनाएं";
+
+        ctx.fillStyle = '#f7ebdb';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.strokeStyle = '#93351d';
+        ctx.lineWidth = 4;
+        ctx.setLineDash([6, 6]);
+        
+        const cx = canvas.width / 2;
+        const cy = canvas.height / 2 - 20;
+        ctx.beginPath();
+        ctx.moveTo(cx, cy + 50);
+        ctx.bezierCurveTo(cx - 80, cy - 20, cx - 80, cy - 80, cx, cy - 40);
+        ctx.bezierCurveTo(cx + 80, cy - 80, cx + 80, cy - 20, cx, cy + 50);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        ctx.fillStyle = '#93351d';
+        ctx.font = 'bold 16px "Noto Serif Devanagari", serif';
+        ctx.textAlign = 'center';
+        ctx.fillText("दिल पर उंगली घुमाएं", cx, cy + 90);
+      }
+      else if (eventType === 'sangeet') {
+        canvas.style.display = 'none';
+        dholLayer.style.display = 'flex';
+        title.innerText = "संगीत संध्या";
+        sub.innerText = "गीतों की मधुर तान व नृत्य की मस्ती";
+        emoji.innerText = "💃🕺";
+        date.innerText = "मंगलवार, 8 दिसंबर 2026 • सायं 06:30 बजे से";
+        instruction.innerText = "ढोल बजाकर संगीत उत्सव शुरू करें";
+        badge.innerText = "ढोल की थाप";
+        dholBeats = 0;
+        document.getElementById('dhol-counter').innerText = "थाप: 0";
+      }
+      else {
+        title.innerText = "शुभ विवाह (पाणिग्रहण संस्कार)";
+        sub.innerText = "जयमाला, सात फेरे और सात जन्मों का बंधन";
+        emoji.innerText = "🪔💍";
+        date.innerText = "बुधवार, 9 दिसंबर 2026 • बारात: सायं 06:00 बजे";
+        instruction.innerText = "रंग साफ करके लग्न मुहूर्त देखें";
+        badge.innerText = "शुभ लग्न";
+
+        ctx.fillStyle = '#851329';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#ffe299';
+        ctx.font = 'bold 18px "Noto Serif Devanagari", serif';
+        ctx.textAlign = 'center';
+        ctx.fillText("✨ मंगल आशीर्वाद ✨", canvas.width / 2, canvas.height / 2);
+      }
+    }
+
+    function closeInteractiveModal() {
+      modal.classList.remove('active');
+    }
+
+    // Scratch card logic
+    function scratch(e) {
+      if (!isDrawing) return;
+      const rect = canvas.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+      const x = clientX - rect.left;
+      const y = clientY - rect.top;
+
+      ctx.globalCompositeOperation = 'destination-out';
+      ctx.beginPath();
+      ctx.arc(x, y, 32, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    canvas.addEventListener('mousedown', () => isDrawing = true);
+    canvas.addEventListener('mouseup', () => isDrawing = false);
+    canvas.addEventListener('mousemove', scratch);
+
+    canvas.addEventListener('touchstart', (e) => { isDrawing = true; scratch(e); });
+    canvas.addEventListener('touchend', () => isDrawing = false);
+    canvas.addEventListener('touchmove', scratch);
+
+    // Dhol Beat Logic
+    function beatDhol() {
+      dholBeats++;
+      document.getElementById('dhol-counter').innerText = `थाप: ${dholBeats} 🎶`;
+      const dholIcon = document.getElementById('dhol-icon');
+      dholIcon.classList.add('beat');
+      setTimeout(() => dholIcon.classList.remove('beat'), 120);
+
+      if (dholBeats >= 5) {
+        document.getElementById('dhol-layer').style.opacity = '0';
+        setTimeout(() => {
+          document.getElementById('dhol-layer').style.display = 'none';
+          document.getElementById('dhol-layer').style.opacity = '1';
+        }, 500);
+      }
+    }
+  </script>
+</body>
+</html>
